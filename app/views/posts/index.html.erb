@@ -1,1 +1,4 @@
-<h2>hello world</h2>
+<%= @posts.each do |post| %>
+  <%= attachment_tag post.attachment.url(:medium)%>
+  <%= post.caption %>
+<% end %>

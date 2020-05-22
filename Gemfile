@@ -7,6 +7,7 @@ ruby '2.7.1'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 gem 'carrierwave'
 gem 'simple_form'
+gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
