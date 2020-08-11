@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+  <%= attachment_tag post.attachment.url(:medium) %>
+  <%= post.caption %>
+<% end %>
