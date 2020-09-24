@@ -1,5 +1,17 @@
-<% @posts.each do |post| %>
-  <%= image_tag post.attachment %>
-  <%= post.caption %>
+<div class="posts-wrapper row">
+	<% @posts.each do |post| %>
+<div class="post">
+	<div class="post-head">
+		<div class="name">Ben Walker</div>
+	</div>
+	<div class="image-center-block">
+		<%= image_tag post.attachment, class: "img-responsive",style: "width: 640px" %>
+
+	</div>
+  	<p class="caption"><%= post.caption %></p>
+</div>
+ 
 <% end %>
+</div>
+
 
