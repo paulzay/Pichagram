@@ -1,5 +1,5 @@
-<%= @posts.each do |post| %>
-  <%= attachment_tag post.attachment.url(:medium)%>
+<% @posts.each do |post| %>
+  <%= image_tag post.attachment %>
   <%= post.caption %>
 <% end %>
 

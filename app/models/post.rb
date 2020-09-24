@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
   validates :user_id, presence: true
-  mount_uploader :attachment, AvatarUploader, styles: { :medium => "640x" }
+  has_one_attached :attachment
   belongs_to :user
 end
