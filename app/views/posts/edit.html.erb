@@ -1,0 +1,11 @@
+<%= form_for(@post, html: {class: 'form-horizontal container'}) do |f| %>
+  <div class="form-group">
+    <%= f.label 'Update status' %><br>
+      <%= f.text_area :caption, class: 'form-control', autofocus: true, 
+          placeholder: 'What\'s up?' %>
+      <%= f.file_field :attachment, class: 'form-control' %>
+  </div>
+  <%= f.submit :post, class: 'btn-success'%>
+<% end %>
+<%= link_to "Delete Post", post_path(@post), method: :delete, data: {
+confirm: "Are you sure you want to delete this post?" } %>
