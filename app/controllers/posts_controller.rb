@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -22,8 +26,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit;end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to(post_path(@post))
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
   private
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
   def post_params
     params.require(:post).permit(:attachment, :caption)
   end
