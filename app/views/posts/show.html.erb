@@ -6,7 +6,7 @@
 	<div class="image-center-block">
 		<%= image_tag @post.attachment, class: "img-responsive",style: "width: 640px" %>
 	</div>
-  	<p class="caption"><%= simple_format @post.caption %></p>
+  	<p class="caption"><%= markdown(@post.caption) %></p>
   	<div class="text-center edit-links">
   		<%= link_to 'Cancel', posts_path %>
   		<%= link_to 'Edit', edit_post_path %>
