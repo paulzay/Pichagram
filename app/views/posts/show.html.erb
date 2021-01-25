@@ -1,20 +1,14 @@
-<div class="posts-wrapper row">
-<div class="post">
-	<div class="post-head">
-		<div class="name"><%= @post.user.user_name %></div>
-	</div>
-	<div class="image-center-block">
-		<%= image_tag @post.attachment, class: "img-responsive",style: "width: 640px" %>
-	</div>
-  	<p class="caption"><%= simple_format @post.caption %></p>
-  	<div class="text-center edit-links">
-  		<%= link_to 'Cancel', posts_path %>
-  		<%= link_to 'Edit', edit_post_path %>
-  		<%= link_to "Delete Post", post_path(@post), method: :delete, data: {
-confirm: "Are you sure you want to delete this post?" } %>
-  		</div>
+<%= render 'post', post: @post %>
+<% if @post.user.id == current_user.id %>
+	<div class="text-center edit-links">
+		<%= link_to "Cancel", posts_path %>
+		<%= link_to "Edit Post", edit_posts_path(@post) %>
 
-</div>
-</div>
+	</div>
+<% else %>
+	<div class="text-center edit-links">
+		<%= link_to "Cancel", posts_path %>
+	</div>
+<% end %>
 
 
