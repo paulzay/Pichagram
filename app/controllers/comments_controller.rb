@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = 'Check the comment form, something went horribly wrong.'
       render root_path
-  end
+    end
   end
 
   def destroy
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def comment_params
